@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+	<title>The Psychic Game</title>
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+<body>
+   <h1>The Psychic Game</h1>
+<hr>                    <!-- I'm adding a line here, but not necessary-->
+   <p>Guess what letter I'm thinking of</p>
+   <h4 id="startgame"></h4>
+<!-- I don't know what exactly I should put here anymore -->
+
+   <script type="text/javascript">
+
+   var ygsf = ""
+var gl = 9
+var wins = 0
+var losses = 0
+
+
+function startgame() {
+   document.getElementById("wins").innerHTML="Wins: "+ wins;
+    document.getElementById("losses").innerHTML="Losses: "+ losses;
+    document.getElementById("gl").innerHTML="Guesses Left: "+ gl;
+    document.getElementById("ygsf").innerHTML="Your Guesses so far: "+ ygsf;
+
+}
+ function makeid()
+{
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 5; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
+
+ document.onkeyup=function(event){
+      var key = String.fromCharCode(event.keyCode).toLowerCase();
+      var position = random.indexOf(key);
+      var notrepeat=(gl.indexOf(key)==(-1))
+      console.log(position);
+   
+   </script>
+
+
+</body>
+</html>
