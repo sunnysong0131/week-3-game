@@ -13,7 +13,10 @@
    <h1>The Psychic Game</h1>
 <hr>                    <!-- I'm adding a line here, but not necessary-->
    <p>Guess what letter I'm thinking of</p>
-   <h4 id="startgame"></h4>
+   <p id="wins"></p>
+   <p id="losses"></p>
+   <p id="gl"></p>
+   <p id="ygsf"></p>
 <!-- I don't know what exactly I should put here anymore -->
 
    <script type="text/javascript">
@@ -29,24 +32,36 @@ function startgame() {
     document.getElementById("losses").innerHTML="Losses: "+ losses;
     document.getElementById("gl").innerHTML="Guesses Left: "+ gl;
     document.getElementById("ygsf").innerHTML="Your Guesses so far: "+ ygsf;
+    text = makeid();
 
 }
  function makeid()
 {
     var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var possible = "abcdefghijklmnopqrstuvwxyz";
 
-    for( var i=0; i < 5; i++ )
         text += possible.charAt(Math.floor(Math.random() * possible.length));
 
     return text;
 }
 
+startgame();
+
  document.onkeyup=function(event){
       var key = String.fromCharCode(event.keyCode).toLowerCase();
-      var position = random.indexOf(key);
-      var notrepeat=(gl.indexOf(key)==(-1))
-      console.log(position);
+      console.log("text: " + text)
+      console.log("guess: " + key)}
+     // var notrepeat=(gl.indexOf(key)==(-1))
+
+     if (text == guess) {
+      wins ++
+
+     }
+
+     else if (text !== guess) {} 
+      
+
+      gl --
    
    </script>
 
